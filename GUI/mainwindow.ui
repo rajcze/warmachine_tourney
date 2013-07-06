@@ -1,0 +1,1076 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="currentIndex">
+       <number>2</number>
+      </property>
+      <widget class="QWidget" name="tab_players">
+       <attribute name="title">
+        <string>Players</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout">
+        <item>
+         <layout class="QGridLayout" name="gridLayout">
+          <item row="1" column="1">
+           <widget class="QComboBox" name="c_faction">
+            <item>
+             <property name="text">
+              <string>Cygnar</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Cryx</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Khador</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Menoth</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Retribution</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Mercs</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Trollbloods</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Skorne</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Circle</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Legion</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Minions</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="1" column="3">
+           <widget class="QLineEdit" name="e_country"/>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLineEdit" name="e_name"/>
+          </item>
+          <item row="0" column="1">
+           <widget class="QLabel" name="label_2">
+            <property name="text">
+             <string>Faction</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="2">
+           <widget class="QLabel" name="label_3">
+            <property name="text">
+             <string>Team</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="0">
+           <widget class="QLabel" name="label">
+            <property name="text">
+             <string>Name</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="2">
+           <widget class="QLineEdit" name="e_team"/>
+          </item>
+          <item row="0" column="3">
+           <widget class="QLabel" name="label_4">
+            <property name="text">
+             <string>Country</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="4">
+           <widget class="QPushButton" name="b_addPlayer">
+            <property name="text">
+             <string>Add</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QTableWidget" name="t_players">
+          <property name="editTriggers">
+           <set>QAbstractItemView::NoEditTriggers</set>
+          </property>
+          <property name="alternatingRowColors">
+           <bool>true</bool>
+          </property>
+          <property name="rowCount">
+           <number>5</number>
+          </property>
+          <property name="columnCount">
+           <number>9</number>
+          </property>
+          <attribute name="horizontalHeaderDefaultSectionSize">
+           <number>100</number>
+          </attribute>
+          <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
+           <bool>false</bool>
+          </attribute>
+          <attribute name="horizontalHeaderStretchLastSection">
+           <bool>true</bool>
+          </attribute>
+          <attribute name="verticalHeaderVisible">
+           <bool>false</bool>
+          </attribute>
+          <attribute name="verticalHeaderShowSortIndicator" stdset="0">
+           <bool>false</bool>
+          </attribute>
+          <row/>
+          <row/>
+          <row/>
+          <row/>
+          <row/>
+          <column>
+           <property name="text">
+            <string>ID</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Name</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Faction</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Team</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Country</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>TP</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>CP</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>KP</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string/>
+           </property>
+          </column>
+         </widget>
+        </item>
+        <item>
+         <layout class="QGridLayout" name="gridLayout_4">
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_19">
+            <property name="styleSheet">
+             <string notr="true">font-weight:bold;</string>
+            </property>
+            <property name="text">
+             <string>Edit Player</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="4">
+           <widget class="QLineEdit" name="e_country_2"/>
+          </item>
+          <item row="1" column="1">
+           <widget class="QLabel" name="label_21">
+            <property name="text">
+             <string>Name</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="label_20">
+            <property name="text">
+             <string>ID</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="4">
+           <widget class="QLabel" name="label_24">
+            <property name="text">
+             <string>Country</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="3">
+           <widget class="QLabel" name="label_23">
+            <property name="text">
+             <string>Team</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="2">
+           <widget class="QLabel" name="label_22">
+            <property name="text">
+             <string>Faction</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="2">
+           <widget class="QComboBox" name="c_faction_2">
+            <item>
+             <property name="text">
+              <string>Cygnar</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Cryx</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Khador</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Menoth</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Retribution</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Mercs</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Trollbloods</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Skorne</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Circle</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Legion</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Minions</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QLineEdit" name="e_name_2"/>
+          </item>
+          <item row="2" column="3">
+           <widget class="QLineEdit" name="e_team_2"/>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLineEdit" name="e_pUid">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="5">
+           <widget class="QPushButton" name="b_editPlayer">
+            <property name="text">
+             <string>Save</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_pairings">
+       <attribute name="title">
+        <string>Pairings</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_2">
+          <item>
+           <widget class="QLabel" name="label_5">
+            <property name="text">
+             <string>Show pairings for round:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QComboBox" name="c_pairRound">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QPushButton" name="b_startNextRound">
+            <property name="text">
+             <string>Start next round</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QTableWidget" name="t_pairings">
+          <property name="autoFillBackground">
+           <bool>false</bool>
+          </property>
+          <property name="editTriggers">
+           <set>QAbstractItemView::NoEditTriggers</set>
+          </property>
+          <property name="alternatingRowColors">
+           <bool>true</bool>
+          </property>
+          <property name="rowCount">
+           <number>5</number>
+          </property>
+          <attribute name="horizontalHeaderStretchLastSection">
+           <bool>true</bool>
+          </attribute>
+          <attribute name="verticalHeaderVisible">
+           <bool>false</bool>
+          </attribute>
+          <row/>
+          <row/>
+          <row/>
+          <row/>
+          <row/>
+          <column>
+           <property name="text">
+            <string>Table #</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Player A</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Player B</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string/>
+           </property>
+          </column>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_3">
+          <item>
+           <spacer name="horizontalSpacer_2">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QPushButton" name="b_exportPairings">
+            <property name="text">
+             <string>Export to HTML</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_results">
+       <attribute name="title">
+        <string>Results</string>
+       </attribute>
+       <layout class="QHBoxLayout" name="horizontalLayout_6">
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_4">
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_4">
+            <item>
+             <widget class="QLabel" name="label_6">
+              <property name="text">
+               <string>Table number:</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="e_tblnum">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="inputMask">
+               <string>009; </string>
+              </property>
+              <property name="placeholderText">
+               <string>___</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="horizontalSpacer_5">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeType">
+               <enum>QSizePolicy::Expanding</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QGridLayout" name="gridLayout_2">
+            <item row="2" column="4">
+             <widget class="QLineEdit" name="e_pAcp">
+              <property name="inputMask">
+               <string>9; </string>
+              </property>
+              <property name="placeholderText">
+               <string>_</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QLabel" name="label_8">
+              <property name="text">
+               <string>ID</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="4">
+             <widget class="QLabel" name="label_11">
+              <property name="text">
+               <string>CP</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0">
+             <widget class="QLineEdit" name="e_pAuid">
+              <property name="enabled">
+               <bool>false</bool>
+              </property>
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="font">
+               <font>
+                <weight>75</weight>
+                <bold>true</bold>
+               </font>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="5">
+             <widget class="QLabel" name="label_12">
+              <property name="text">
+               <string>Destroyed</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="0">
+             <widget class="QLabel" name="label_7">
+              <property name="font">
+               <font>
+                <weight>75</weight>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="text">
+               <string>Player A</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="1">
+             <widget class="QLineEdit" name="e_pAname">
+              <property name="enabled">
+               <bool>false</bool>
+              </property>
+              <property name="font">
+               <font>
+                <weight>75</weight>
+                <bold>true</bold>
+               </font>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="3">
+             <widget class="QLabel" name="label_10">
+              <property name="text">
+               <string>TP</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="5">
+             <widget class="QLineEdit" name="e_pAkp">
+              <property name="inputMask">
+               <string>009; </string>
+              </property>
+              <property name="placeholderText">
+               <string>___</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="3">
+             <widget class="QLineEdit" name="e_pAtp">
+              <property name="inputMask">
+               <string>9; </string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="placeholderText">
+               <string>_</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="QLabel" name="label_9">
+              <property name="text">
+               <string>Name</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="2">
+             <widget class="QLabel" name="label_27">
+              <property name="text">
+               <string>Faction</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="2">
+             <widget class="QComboBox" name="c_pAfaction">
+              <property name="enabled">
+               <bool>true</bool>
+              </property>
+              <property name="font">
+               <font>
+                <weight>50</weight>
+                <bold>false</bold>
+               </font>
+              </property>
+              <item>
+               <property name="text">
+                <string>Cygnar</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Cryx</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Khador</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Menoth</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Retribution</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Mercs</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Trollbloods</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Skorne</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Circle</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Legion</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Minions</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QGridLayout" name="gridLayout_3">
+            <item row="2" column="1">
+             <widget class="QLineEdit" name="e_pBname">
+              <property name="enabled">
+               <bool>false</bool>
+              </property>
+              <property name="font">
+               <font>
+                <weight>75</weight>
+                <bold>true</bold>
+               </font>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="3">
+             <widget class="QLabel" name="label_16">
+              <property name="text">
+               <string>TP</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="4">
+             <widget class="QLineEdit" name="e_pBcp">
+              <property name="inputMask">
+               <string>9; </string>
+              </property>
+              <property name="placeholderText">
+               <string>_</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="QLabel" name="label_15">
+              <property name="text">
+               <string>Name</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="4">
+             <widget class="QLabel" name="label_17">
+              <property name="text">
+               <string>CP</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="3">
+             <widget class="QLineEdit" name="e_pBtp">
+              <property name="inputMask">
+               <string>9; </string>
+              </property>
+              <property name="placeholderText">
+               <string>_</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QLabel" name="label_13">
+              <property name="text">
+               <string>ID</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0">
+             <widget class="QLineEdit" name="e_pBuid">
+              <property name="enabled">
+               <bool>false</bool>
+              </property>
+              <property name="font">
+               <font>
+                <weight>75</weight>
+                <bold>true</bold>
+               </font>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="5">
+             <widget class="QLineEdit" name="e_pBkp">
+              <property name="inputMask">
+               <string>009; </string>
+              </property>
+              <property name="placeholderText">
+               <string>___</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="0">
+             <widget class="QLabel" name="label_14">
+              <property name="font">
+               <font>
+                <weight>75</weight>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="text">
+               <string>Player B</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="5">
+             <widget class="QLabel" name="label_18">
+              <property name="text">
+               <string>Destroyed</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="2">
+             <widget class="QComboBox" name="c_pBfaction">
+              <property name="enabled">
+               <bool>true</bool>
+              </property>
+              <property name="font">
+               <font>
+                <weight>50</weight>
+                <bold>false</bold>
+               </font>
+              </property>
+              <item>
+               <property name="text">
+                <string>Cygnar</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Cryx</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Khador</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Menoth</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Retribution</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Mercs</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Trollbloods</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Skorne</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Circle</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Legion</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Minions</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+            <item row="1" column="2">
+             <widget class="QLabel" name="label_28">
+              <property name="text">
+               <string>Faction</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_5">
+            <item>
+             <spacer name="horizontalSpacer_3">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeType">
+               <enum>QSizePolicy::MinimumExpanding</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QPushButton" name="b_saveResult">
+              <property name="text">
+               <string>Save</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <spacer name="verticalSpacer">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_3">
+          <item>
+           <widget class="QLabel" name="label_25">
+            <property name="text">
+             <string>Order</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QTextBrowser" name="textBrowser">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>2</verstretch>
+             </sizepolicy>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_26">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="text">
+             <string>Best in Faction</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QTextBrowser" name="textBrowser_2">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+       <zorder>horizontalSpacer_3</zorder>
+       <zorder>b_saveResult</zorder>
+       <zorder>layoutWidget</zorder>
+       <zorder>textBrowser</zorder>
+       <zorder>label_25</zorder>
+       <zorder>label_26</zorder>
+       <zorder>textBrowser_2</zorder>
+       <zorder>horizontalSpacer_4</zorder>
+       <zorder>horizontalSpacer_5</zorder>
+       <zorder>verticalSpacer</zorder>
+       <zorder></zorder>
+       <zorder>horizontalSpacer_6</zorder>
+       <zorder></zorder>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>18</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionSave_tournament_state"/>
+    <addaction name="actionLoad_tournament_state"/>
+    <addaction name="actionLoad_Players"/>
+   </widget>
+   <addaction name="menuFile"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionLoad_players_from_CSV">
+   <property name="text">
+    <string>Load players from CSV</string>
+   </property>
+  </action>
+  <action name="actionSave_tournament_state">
+   <property name="text">
+    <string>Save tournament state</string>
+   </property>
+  </action>
+  <action name="actionLoad_tournament_state">
+   <property name="text">
+    <string>Load tournament state</string>
+   </property>
+  </action>
+  <action name="actionLoad_Players">
+   <property name="text">
+    <string>Load Players</string>
+   </property>
+  </action>
+ </widget>
+ <tabstops>
+  <tabstop>e_name</tabstop>
+  <tabstop>c_faction</tabstop>
+  <tabstop>e_team</tabstop>
+  <tabstop>e_country</tabstop>
+  <tabstop>b_addPlayer</tabstop>
+  <tabstop>e_pUid</tabstop>
+  <tabstop>e_name_2</tabstop>
+  <tabstop>c_faction_2</tabstop>
+  <tabstop>e_team_2</tabstop>
+  <tabstop>e_country_2</tabstop>
+  <tabstop>b_editPlayer</tabstop>
+  <tabstop>tabWidget</tabstop>
+  <tabstop>t_players</tabstop>
+  <tabstop>c_pairRound</tabstop>
+  <tabstop>b_startNextRound</tabstop>
+  <tabstop>b_exportPairings</tabstop>
+  <tabstop>t_pairings</tabstop>
+  <tabstop>e_tblnum</tabstop>
+  <tabstop>e_pAuid</tabstop>
+  <tabstop>e_pAname</tabstop>
+  <tabstop>c_pAfaction</tabstop>
+  <tabstop>e_pAtp</tabstop>
+  <tabstop>e_pAcp</tabstop>
+  <tabstop>e_pAkp</tabstop>
+  <tabstop>e_pBuid</tabstop>
+  <tabstop>e_pBname</tabstop>
+  <tabstop>c_pBfaction</tabstop>
+  <tabstop>e_pBtp</tabstop>
+  <tabstop>e_pBcp</tabstop>
+  <tabstop>e_pBkp</tabstop>
+  <tabstop>b_saveResult</tabstop>
+  <tabstop>textBrowser</tabstop>
+  <tabstop>textBrowser_2</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>
