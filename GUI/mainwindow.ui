@@ -11,14 +11,14 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>WM Masters 2013</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QHBoxLayout" name="horizontalLayout">
     <item>
      <widget class="QTabWidget" name="tabWidget">
       <property name="currentIndex">
-       <number>2</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="tab_players">
        <attribute name="title">
@@ -140,11 +140,14 @@
           <property name="alternatingRowColors">
            <bool>true</bool>
           </property>
+          <property name="sortingEnabled">
+           <bool>false</bool>
+          </property>
           <property name="rowCount">
            <number>5</number>
           </property>
           <property name="columnCount">
-           <number>9</number>
+           <number>10</number>
           </property>
           <attribute name="horizontalHeaderDefaultSectionSize">
            <number>100</number>
@@ -194,6 +197,11 @@
           <column>
            <property name="text">
             <string>TP</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>SoS</string>
            </property>
           </column>
           <column>
@@ -439,35 +447,11 @@
           </column>
          </widget>
         </item>
-        <item>
-         <layout class="QHBoxLayout" name="horizontalLayout_3">
-          <item>
-           <spacer name="horizontalSpacer_2">
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>40</width>
-              <height>20</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-          <item>
-           <widget class="QPushButton" name="b_exportPairings">
-            <property name="text">
-             <string>Export to HTML</string>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </item>
        </layout>
       </widget>
       <widget class="QWidget" name="tab_results">
        <attribute name="title">
-        <string>Results</string>
+        <string>Enter Results</string>
        </attribute>
        <layout class="QHBoxLayout" name="horizontalLayout_6">
         <item>
@@ -932,50 +916,6 @@
           </item>
          </layout>
         </item>
-        <item>
-         <layout class="QVBoxLayout" name="verticalLayout_3">
-          <item>
-           <widget class="QLabel" name="label_25">
-            <property name="text">
-             <string>Order</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QTextBrowser" name="textBrowser">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-              <horstretch>0</horstretch>
-              <verstretch>2</verstretch>
-             </sizepolicy>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QLabel" name="label_26">
-            <property name="enabled">
-             <bool>false</bool>
-            </property>
-            <property name="text">
-             <string>Best in Faction</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QTextBrowser" name="textBrowser_2">
-            <property name="enabled">
-             <bool>false</bool>
-            </property>
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </item>
        </layout>
        <zorder>horizontalSpacer_3</zorder>
        <zorder>b_saveResult</zorder>
@@ -1052,7 +992,6 @@
   <tabstop>t_players</tabstop>
   <tabstop>c_pairRound</tabstop>
   <tabstop>b_startNextRound</tabstop>
-  <tabstop>b_exportPairings</tabstop>
   <tabstop>t_pairings</tabstop>
   <tabstop>e_tblnum</tabstop>
   <tabstop>e_pAuid</tabstop>
@@ -1068,8 +1007,6 @@
   <tabstop>e_pBcp</tabstop>
   <tabstop>e_pBkp</tabstop>
   <tabstop>b_saveResult</tabstop>
-  <tabstop>textBrowser</tabstop>
-  <tabstop>textBrowser_2</tabstop>
  </tabstops>
  <resources/>
  <connections/>
