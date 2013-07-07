@@ -13,6 +13,8 @@ class PMainWindow(QtGui.QMainWindow):
         self.ui = ui_mw.Ui_MainWindow()
         self.ui.setupUi(self)
         
+        self.changes_to_save = False
+        
         self.tournament = Tournament()
         self.ui.t_players.setRowCount(0)
         self.ui.t_pairings.setRowCount(0)
@@ -28,6 +30,13 @@ class PMainWindow(QtGui.QMainWindow):
         self.ui.e_pBcp.setFixedSize(metrics.width("8888"), self.ui.e_pBcp.height())
         self.ui.e_pAkp.setFixedSize(metrics.width("888888"), self.ui.e_pAkp.height())
         self.ui.e_pBkp.setFixedSize(metrics.width("888888"), self.ui.e_pBkp.height())
+
+    def closeEvent(self, event):
+        if self.changes_to_save:
+            if self.yes_no_dialog("Unsaved changes", "There are unsaved changes. Do you want to save the tournament state before exitting?"):
+                self.on_actionSave_tournament_state_triggered(True)
+        
+        event.accept()
 
     def __guiclear(self):
         self.ui.t_players.clearContents()
@@ -94,6 +103,9 @@ class PMainWindow(QtGui.QMainWindow):
         self.t_players_add_player(p)
         
         self.tournament.tables = len(self.tournament.players) / 2
+        
+        # Mark that there are changes to be saved
+        self.changes_to_save = True
     
     # ------------ Edit Player ------------    
     
@@ -151,6 +163,9 @@ class PMainWindow(QtGui.QMainWindow):
         self.__editplayer_guiclear()
         self._show_pairings(self.tournament.pairings[-1], self.tournament.byes[-1])
         
+        # Mark that there are changes to be saved
+        self.changes_to_save = True
+        
 
     # ============ TAB PAIRINGS ============
 
@@ -205,6 +220,9 @@ class PMainWindow(QtGui.QMainWindow):
 
         self.ui.statusbar.showMessage("Current round: %s" % r)
         self.ui.b_addPlayer.setEnabled(False)
+        
+        # Mark that there are changes to be saved
+        self.changes_to_save = True
     
     # ============ TAB RESULTS ============
     
@@ -319,6 +337,9 @@ class PMainWindow(QtGui.QMainWindow):
         self.update_t_players_from_tournament()
         self.__addResultGuiClear()
         self.ui.e_tblnum.setText("")
+        
+        # Mark that there are changes to be saved
+        self.changes_to_save = True
 
     # ============ FILE MENU ============
 
@@ -338,12 +359,16 @@ class PMainWindow(QtGui.QMainWindow):
             self.t_players_add_player(p)
         
         self.tournament.tables = len(self.tournament.players) / 2
+        
+        # Mark that there are changes to be saved
+        self.changes_to_save = True
 
 
     @QtCore.Slot(bool)
     def on_actionSave_tournament_state_triggered(self, state):
         #FIXME: add save file dialog
         pickle.dump( self.tournament, open( "save.p", "wb" ) )
+        self.changes_to_save = False
 
     @QtCore.Slot(bool)
     def on_actionLoad_tournament_state_triggered(self, state):
@@ -371,6 +396,8 @@ class PMainWindow(QtGui.QMainWindow):
         
         if self.tournament.current_round > -1:
             self.ui.b_addPlayer.setEnabled(False)
+        
+        self.changes_to_save = False
         
 
 if __name__ == "__main__":
